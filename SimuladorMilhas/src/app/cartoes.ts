@@ -8,7 +8,7 @@ export const cartoes= [
     { id :  7 ,	name : "TudoAzul Itaucard 2.0 International Mastercard (Compras comuns)" , 	valPonto: 1 ,	validadePontos: 24 ,	valPontos: 24},
     { id :  8 ,	name : "TudoAzul Itaucard 2.0 International Mastercard (Compras passagens azul)" , 	valPonto: 1.5 ,	validadePontos: 24 ,	valPontos: 24},
     { id :  9 ,	name : "TudoAzul Itaucard 2.0 Gold MasterCard (Compras comuns)" , 	valPonto: 1.33 ,	validadePontos: 24 ,	valPontos: 24},
-    { id :  10 ,	name : "TudoAzul Itaucard 2.0 Gold MasterCard (Compras passagens azul)" , 	valPonto: 2 ,	validadePontos: 24 ,	valPontos: 24},
+    { id :  10 ,name : "TudoAzul Itaucard 2.0 Gold MasterCard (Compras passagens azul)" , 	valPonto: 2 ,	validadePontos: 24 ,	valPontos: 24},
     { id :  11 ,	name : "TudoAzul Itaucard 2.0 Platinum MasterCard (Compras comuns)" , 	valPonto: 1.5 ,	validadePontos: 24 ,	valPontos: 24},
     { id :  12 ,	name : "TudoAzul Itaucard 2.0 Platinum MasterCard (Compras passagens azul)" , 	valPonto: 2.5 ,	validadePontos: 24 ,	valPontos: 24},
     { id :  13 ,	name : "Itaú Múltiplo Internacional MasterCard" , 	valPonto: 1 ,	validadePontos: 24 ,	valPontos: 24},
