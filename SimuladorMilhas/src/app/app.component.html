@@ -39,7 +39,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Calculadora de Milhas</h1>
+          <h1 class="mb-5">{{title}}</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <!--<form>
@@ -68,9 +68,39 @@
                 <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
               </div>
          </div>
+         <div class="col col-lg-8">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Escolha um Cartão</label>
+              <select class="form-control">  >
+                  <option  *ngFor="let cartao of cartoes"   >{{cartao.name  }}</option>
+              </select>
+
+            
+            </div>
+          </div>
+          <div class="col col-lg-8">
+                  <div class="col-xl-9 mx-auto">
+                      <h5 class="mb-5">O que deseja?</h5>
+                  </div>
+                  <div class="row">
+                  <div class="col-sm">
+                        <button type="button" class="btn btn-success">Quanto preciso gastar  para acumular pontos? 
+                        </button>
+                  </div>
+                  <div class="col-sm">
+                      <button type="button" class="btn btn-success">Em quantos meses consigo acumular pontos?
+                        </button>
+                   </div>
+                   <div class="col-sm">
+                      <button type="button" class="btn btn-success">Quantos pontos consigo acumular?
+                        </button>
+                   </div>
+                  </div>
+          </div>        
       </div>
     </div>
   </section>
+
   <!-- Image Showcases 
   <section class="showcase">
     <div class="container-fluid p-0">

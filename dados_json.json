@@ -1,0 +1,381 @@
+{name: "TAM Itaucard 2.0 International MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "TAM Itaucard 2.0 International Visa" , 
+ valPontos : 1	24	24 meses
+{name: "TAM Itaucard 2.0 Gold Visa" , 
+ valPontos : 1,33	24	24 meses
+{name: "TAM Itaucard 2.0 Gold MasterCard" , 
+ valPontos : 1,33	24	24 meses
+{name: "TAM Itaucard 2.0 Platinum MasterCard" , 
+ valPontos : 1,5	24	24 meses
+{name: "TAM Itaucard 2.0 Platinum Visa" , 
+ valPontos : 1,5	24	24 meses
+{name: "TudoAzul Itaucard 2.0 International Mastercard (Compras comuns)" , 
+ valPontos : 1	24	24 meses
+{name: "TudoAzul Itaucard 2.0 International Mastercard (Compras passagens azul)" , 
+ valPontos : 1,5	24	24 meses
+{name: "TudoAzul Itaucard 2.0 Gold MasterCard (Compras comuns)" , 
+ valPontos : 1,33	24	24 meses
+{name: "TudoAzul Itaucard 2.0 Gold MasterCard (Compras passagens azul)" , 
+ valPontos : 2	24	24 meses
+{name: "TudoAzul Itaucard 2.0 Platinum MasterCard (Compras comuns)" , 
+ valPontos : 1,5	24	24 meses
+{name: "TudoAzul Itaucard 2.0 Platinum MasterCard (Compras passagens azul)" , 
+ valPontos : 2,5	24	24 meses
+{name: "Itaú Múltiplo Internacional MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Itaucard 2.0 Internacional Programa Sempre Presente MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Itaucard 2.0 Internacional Programa Sempre Presente Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Itaucard 2.0 Gold Programa Sempre Presente MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Itaucard 2.0 Gold Programa Sempre Presente Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Itaucard 2.0 Platinum Programa Sempre Presente MasterCard" , 
+ valPontos : 1,5	36	24 meses
+{name: "Itaucard 2.0 Platinum Programa Sempre Presente Visa " , 
+ valPontos : 1,5	36	24 meses
+{name: "Itaucard MasterCard Black" , 
+ valPontos : 2	36	36 meses
+{name: "Itaucard Visa Infinite" , 
+ valPontos : 2	36	36 meses
+{name: "Itaú Visa Infinite" , 
+ valPontos : 2	36	36 meses
+{name: "Itaú MasterCard Black" , 
+ valPontos : 2	36	36 meses
+{name: "Itaú MasterCard Platinum" , 
+ valPontos : 1,5	36	36 meses
+{name: "Itaucard Universitário MasterCard" , 
+ valPontos : 1	24	36 meses
+{name: "Itaucard Universitário Visa" , 
+ valPontos : 1	24	36 meses
+{name: "Itaú Uniclass Múltiplo Internacional MasterCard" , 
+ valPontos : 1	24	36 meses
+{name: "Itaú Uniclass Múltiplo Internacional Visa" , 
+ valPontos : 1	24	36 meses
+{name: "Itaú Uniclass Múltiplo Gold MasterCard" , 
+ valPontos : 1	24	36 meses
+{name: "Itaú Uniclass Múltiplo Gold Visa" , 
+ valPontos : 1	24	36 meses
+{name: "Itaú Uniclass Internacional MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Itaú Uniclass Internacional Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Itaú Uniclass Gold MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Itaú Uniclass Gold Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Itaú Uniclass Platinum MasterCard" , 
+ valPontos : 1,5	36	24 meses
+{name: "Itaú Uniclass Platinum Visa " , 
+ valPontos : 1,5	36	24 meses
+{name: "Itaú Personnalité Platinum MasterCard" , 
+ valPontos : 1,5	36	24 meses
+{name: "Itaú Personnalité Platinum Visa" , 
+ valPontos : 1,5	36	24 meses
+{name: "Itaú Personnalité MasterCard Black" , 
+ valPontos : 2	36	24 meses
+{name: "Itaú Múltiplo Gold MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "TAM Itaucard Nacional Visa" , 
+ valPontos : 1	24	24 meses
+{name: "TAM Itaucard Nacional MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Banco do Brasil Smiles International MasterCard" , 
+ valPontos : 1,35	36	24 meses
+{name: "Banco do Brasil Smiles Gold MasterCard" , 
+ valPontos : 1,5	36	Não expiram
+{name: "Banco do Brasil Smiles Platinum MasterCard" , 
+ valPontos : 2	36	36 meses
+{name: "Ourocard Platinum Visa (Compras até R$ 4 mil)" , 
+ valPontos : 1,2	36	24 meses
+{name: "Ourocard Platinum MasterCard (Compras acima de R$ 4 mil)" , 
+ valPontos : 1,2	36	36 meses
+{name: "Ourocard Platinum Amex" , 
+ valPontos : 1,6	36	24 meses
+{name: "Ourocard Mastercard Black " , 
+ valPontos : 2	Não expira	24 meses
+{name: "Ourocard Visa Infinite " , 
+ valPontos : 2	Não expira	36 meses
+{name: "Ourocard Gold Visa" , 
+ valPontos : 1	24	36 meses
+{name: "Ourocard Gold MasterCard" , 
+ valPontos : 1	24	36 meses
+{name: "Ourocard International Visa" , 
+ valPontos : 1	24	Não expiram
+{name: "Ourocard International MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Ourocard Doméstico Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Ourocard Doméstico MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Ourocard Elo Mais" , 
+ valPontos : 1,2	24	24 meses
+{name: "Ourocard Elo Grafite" , 
+ valPontos : 1,4	24	24 meses
+{name: "Ourocard Estilo Elo Grafite" , 
+ valPontos : 1,7	24	24 meses
+{name: "Ourocard Estilo Platinum Visa" , 
+ valPontos : 1,5	36	24 meses
+{name: "Ourocard Estilo Platinum MasterCard" , 
+ valPontos : 1,5	36	36 meses
+{name: "Ourocard Amex Platinum Estilo" , 
+ valPontos : 1,6	36	36 meses
+{name: "Ourocard Estilo Elo Nanquim" , 
+ valPontos : 2,2	24	Não expiram
+{name: "Ourocard Elo Nanquim" , 
+ valPontos : 2,2	24	24 meses
+{name: "Ourocard Elo " , 
+ valPontos : 1	24	24 meses
+{name: "Bradesco Smiles Gold" , 
+ valPontos : 1,5	24	24 meses
+{name: "Bradesco Smiles Platinum" , 
+ valPontos : 2	24	24 meses
+{name: "Bradesco Smiles Internacional" , 
+ valPontos : 1,35	24	24 meses
+{name: "Bradesco Master Gold" , 
+ valPontos : 1	24	24 meses
+{name: "Bradesco Visa Gold" , 
+ valPontos : 1	24	24 meses
+{name: "Bradesco Master Platinum" , 
+ valPontos : 1,2	24	24 meses
+{name: "Bradesco Visa Platinum" , 
+ valPontos : 1,2	24	24 meses
+{name: "Bradesco Visa Infinite (Compras até R$ 9 mil)" , 
+ valPontos : 1,8	24	36 meses
+{name: "Bradesco Visa Infinite (Compras acima de R$ 9 mil)" , 
+ valPontos : 2	24	Não expiram
+{name: "Bradesco Mastercard Black (Compras até R$ 9 mil)" , 
+ valPontos : 1,8	24	Não expiram
+{name: "Bradesco Mastercard Black (Compras acima de R$ 9 mil)" , 
+ valPontos : 2	24	Não expiram
+{name: "Bradesco Elo Mais " , 
+ valPontos : 1,2	24	Não expiram
+{name: "Bradesco Exclusive Elo Mais " , 
+ valPontos : 1,2	24	36 meses
+{name: "Bradesco Exclusive Gold American Express " , 
+ valPontos : 1,2	24	24 meses
+{name: "Bradesco Visa Gold Exclusive " , 
+ valPontos : 1	24	24 meses
+{name: "Bradesco Prime Visa Gold " , 
+ valPontos : 1,2	24	24 meses
+{name: "Bradesco MasterCard Gold Exclusive " , 
+ valPontos : 1	24	24 meses
+{name: "Bradesco Prime MasterCard Gold " , 
+ valPontos : 1,2	24	24 meses
+{name: "Bradesco Prime Platinum American Express " , 
+ valPontos : 1,7	24	24 meses
+{name: "Bradesco Prime Visa Platinum " , 
+ valPontos : 1,5	24	24 meses
+{name: "Bradesco Prime MasterCard Platinum " , 
+ valPontos : 1,5	24	24 meses
+{name: "Bradesco Prime MasterCard Black (Gastos de até R$ 9 mil )" , 
+ valPontos : 1,8	24	24 meses
+{name: "Bradesco Prime MasterCard Black (Gastos acima de 9 mil )" , 
+ valPontos : 2	24	24 meses
+{name: "Bradesco Prime Visa Infinite (Gastos de até R$ 9 mil )" , 
+ valPontos : 1,8	24	24 meses
+{name: "Bradesco Prime Visa Infinite (Gastos acima de 9 mil )" , 
+ valPontos : 2	24	24 meses
+{name: "Bradesco Preferencial Gold" , 
+ valPontos : 1	24	24 meses
+{name: "Bradesco Prime Platinum Múltiplo " , 
+ valPontos : 1,6	24	24 meses
+{name: "Bradesco Multiplo Infinite Prime (Gastos até 9 mil)" , 
+ valPontos : 1,8	24	24 meses
+{name: "Bradesco Multiplo Infinite Prime (Gastos acima de 9 mil)" , 
+ valPontos : 2	24	24 meses
+{name: "Bradesco Gold American Express " , 
+ valPontos : 1,2	24	24 meses
+{name: "Bradesco Platinum American Express " , 
+ valPontos : 1,4	24	24 meses
+{name: "Santander Gold Visa " , 
+ valPontos : 1	36	36 meses
+{name: "Santander Gold MasterCard " , 
+ valPontos : 1	36	36 meses
+{name: "Santander Light MasterCard " , 
+ valPontos : 1	24	24 meses
+{name: "Santander Light Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Santander Internacional Visa " , 
+ valPontos : 1	36	36 meses
+{name: "Santander Internacional MasterCard " , 
+ valPontos : 1	36	36 meses
+{name: "Santander Free MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Santander Free Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Santander Flex Nacional" , 
+ valPontos : 1	24	24 meses
+{name: "Santander Platinum MasterCard " , 
+ valPontos : 1,5	36	36 meses
+{name: "Santander Platinum Visa " , 
+ valPontos : 1,5	36	36 meses
+{name: "Santander Platinum Style MasterCard " , 
+ valPontos : 1,3	36	36 meses
+{name: "Santander Platinum Style Visa " , 
+ valPontos : 1,3	36	36 meses
+{name: "Santander Elite Platinum MasterCard" , 
+ valPontos : 1,5	36	36 meses
+{name: "Santander Elite Platinum Visa " , 
+ valPontos : 1,5	36	36 meses
+{name: "Santander Unlimited Visa Infinite " , 
+ valPontos : 2,2	Não expira	Não expiram
+{name: "Santander Unlimited Mastercard Black" , 
+ valPontos : 2,2	Não expira	Não expiram
+{name: "Ferrari Santander MasterCard" , 
+ valPontos : 1,2	36	36 meses
+{name: "Santander Flex Internacional MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Santander Flex Internacional Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Santander OAB SP MasterCard" , 
+ valPontos : 1	36	36 meses
+{name: "Santander Dufry Platinum MasterCard" , 
+ valPontos : 1,5	Não expira	Não expiram
+{name: "Santander Dufry Platinum Visa " , 
+ valPontos : 1,5	Não expira	Não expiram
+{name: "Santander Unique " , 
+ valPontos : 2	36	36 meses
+{name: "Santander Fit " , 
+ valPontos : 1	24	24 meses
+{name: "Santander Nacional " , 
+ valPontos : 1	36	36 meses
+{name: "HSBC Open Card Visa " , 
+ valPontos : 1	24	24 meses
+{name: "HSBC Open Card MasterCard " , 
+ valPontos : 1	24	24 meses
+{name: "HSBC Open Card Amex " , 
+ valPontos : 1	24	24 meses
+{name: "HSBC SuperClass Card Visa " , 
+ valPontos : 1	24	24 meses
+{name: "HSBC SuperClass Card MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "HSBC Gold Card Visa " , 
+ valPontos : 1	24	24 meses
+{name: "HSBC Platinum HSBC Advance MasterCard " , 
+ valPontos : 1,3	24	24 meses
+{name: "HSBC Platinum HSBC Advance Visa " , 
+ valPontos : 1,3	24	24 meses
+{name: "HSBC Platinum Visa" , 
+ valPontos : 1,5	24	24 meses
+{name: "HSBC Auto Gold Card Visa " , 
+ valPontos : 1	24	24 meses
+{name: "HSBC Premier MasterCard" , 
+ valPontos : 1,5	24	24 meses
+{name: "HSBC Premier Mastecard Black (Transação nacional)" , 
+ valPontos : 2	36	36 meses
+{name: "HSBC Premier Mastecard Black (Transação internacional )" , 
+ valPontos : 3	36	36 meses
+{name: "HSBC Delta Sky Miles Visa (Transação Nacional e internacional) " , 
+ valPontos : 1	Não expira	Não expiram
+{name: "HSBC Delta Sky Miles Visa (Compra de passagens aéreas Delta)" , 
+ valPontos : 2	Não expira 	Não expiram
+{name: "Instituto HSBC Solidariedade Visa " , 
+ valPontos : 1	24	24 meses
+{name: "Instituto HSBC Solidariedade MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul Visa Classic" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul Visa Platinum" , 
+ valPontos : 1,5	24	24 meses
+{name: "Banrisul Visa Gold" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul Mastercard Platinum" , 
+ valPontos : 1,5	24	24 meses
+{name: "Banrisul Visa Infinite" , 
+ valPontos : 2,2	24	24 meses
+{name: "Banrisul MasterCard Standard" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul Mastercard Gold" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul Visa Gold Servidor Público" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul MasterCard Gold Servidor Público" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul MasterCard Standard Servidor Público" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul Visa Universitário " , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul MasterCard Universitário" , 
+ valPontos : 1	24	24 meses
+{name: "Banrisul Visa Classic Servidor Público " , 
+ valPontos : 1	24	24 meses
+{name: "Caixa Turismo Internacional" , 
+ valPontos : 1	24	24 meses
+{name: "Caixa gold" , 
+ valPontos : 1	24	24 meses
+{name: "Caixa Platinum" , 
+ valPontos : 1,35	24	24 meses
+{name: "Caixa Visa Infinite" , 
+ valPontos : 2,1	36	36 meses
+{name: "Caixa Mastercard Black " , 
+ valPontos : 2,1	36	36 meses
+{name: "Caixa Cartão Azul " , 
+ valPontos : 1	24	24 meses
+{name: "Caixa Internacional " , 
+ valPontos : 1	24	24 meses
+{name: "Caixa Platinum Turismo (Gastos nos ramos de turismo e entretenimento)" , 
+ valPontos : 1,8	24	24 meses
+{name: "Caixa Platinum Turismo (Gastos nos demais estabelecimentos)" , 
+ valPontos : 1,35	24	24 meses
+{name: "Epidemia Corinthiana CAIXA Platinum" , 
+ valPontos : 1	24	24 meses
+{name: "Citibank Aadvantage International Visa " , 
+ valPontos : 1	Não expira	Não expiram
+{name: "Citibank Aadvantage International MasterCard" , 
+ valPontos : 1	Não expira	Não expiram
+{name: "Citibank Advantage Gold Visa " , 
+ valPontos : 1	Não expira	Não expiram
+{name: "Citibank Aadvantage Gold MasterCard " , 
+ valPontos : 1	Não expira	Não expiram
+{name: "Citibank Aadvantage Platinum Visa " , 
+ valPontos : 1,3	Não expira	Não expiram
+{name: "Citibank Aadvantage Platinum MasterCard" , 
+ valPontos : 1,3	Não expira	Não expiram
+{name: "Citibank Aadvantage Black MasterCard " , 
+ valPontos : 1,5	Não expira	Não expiram
+{name: "Diners Club Internacional Exclusive" , 
+ valPontos : 1,5	36	36 meses
+{name: "Diners Club Internacional" , 
+ valPontos : 1	24	24 meses
+{name: "Diners Club Internacional Exclusive Exame " , 
+ valPontos : 1,5	36	36 meses
+{name: "Diners Club Internacional Exame " , 
+ valPontos : 1	24	24 meses
+{name: "Banco Votorantim Internacional Visa" , 
+ valPontos : 1	24	24 meses
+{name: "Banco Votorantim Internacional MasterCard" , 
+ valPontos : 1	24	24 meses
+{name: "Banco Votorantim Platinum Visa  (Gasto de até R$ 1 mil)" , 
+ valPontos : 1	24	24 meses
+{name: "Banco Votorantim Platinum MasterCard (Gasto de até R$ 1 mil)" , 
+ valPontos : 1	24	24 meses
+{name: "Banco Votorantim Platinum Visa (Gasto de R$ 1 mil a 2 mil)" , 
+ valPontos : 1,5	24	24 meses
+{name: "Banco Votorantim Platinum MasterCard (Gasto de R$ 1 mil a 2 mil) " , 
+ valPontos : 1,5	24	24 meses
+{name: "Banco Votorantim Platinum Visa (Gasto a partir de R$ 2 mil)" , 
+ valPontos : 1,75	24	24 meses
+{name: "Banco Votorantim Platinum MasterCard (Gasto a partir de R$ 2 mil)" , 
+ valPontos : 1,75	24	24 meses
+{name: "Banco Votorantim Gold Visa (Gasto de até R$ 1 mil)" , 
+ valPontos : 1	24	24 meses
+{name: "Banco Votorantim Gold MasterCard (Gasto de até R$ 1 mil)" , 
+ valPontos : 1	24	24 meses
+{name: "Banco Votorantim Gold Visa (Gasto a partir de R$ 2 mil)" , 
+ valPontos : 1,2	24	24 meses
+{name: "Banco Votorantim Gold MasterCard (Gasto a partir de R$ 2 mil)" , 
+ valPontos : 1,2	24	24 meses
+{name: "American Express® Green" , 
+ valPontos : 1,3	Não expira 	Não expiram
+{name: "American Express® Gold Card" , 
+ valPontos : 1,5	Não expira 	Não expiram
+{name: "The Platinum Card®" , 
+ valPontos : 2,2	Não expira 	Não expiram
+{name: "American Express® Credit" , 
+ valPontos : 1	Não expira 	Não expiram
+{name: "Bradesco American Express® Credit" , 
+ valPontos : 1	Não expira 	Não expiram
+
