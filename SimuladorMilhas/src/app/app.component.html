@@ -331,7 +331,7 @@
         <div class="container-fluid">
            <div class="row justify-content-md-center">
                 <div class="col col-lg-2">
-                    <label for="exampleInputEmail1">Preço Atual do Dolar</label>
+                    <label for="exampleInputEmail1">Valor Atual do Dolar</label>
                 </div>
                 <div class="col col-lg-2">
                     <div class="form-group">
@@ -343,34 +343,43 @@
                 </div>
            </div>
 
-           <div class="row justify-content-md-center">
+           <div class="row justify-content-md-center" >
              
-              <div class="col col-lg-4">
+              <div class="col col-lg-8">
                   <div class="row justify-content-md-center">
                       <h5 class=" justify-content-center">Digite seu Cartão</h5>
                   </div>
-                  <div class="form-group">
-                      <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"/>
-                    </div>
-              </div>
-              </div>
+                  <div class="form-group" >
+                    <ng-template #rt let-r="result" let-t="term">
+                      <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+                    </ng-template>
+                    
+                    <input placeholder="Exemplo: Bradesco Visa Infinite" 
+                      id="typeahead-template" type="text" class="form-control" 
+                      [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
+                      [inputFormatter]="formatter" />
+                      <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver dinponível clique <a href="#">aqui.</a> </small>
 
-            <div class="row justify-content-md-center" *ngIf="false">
+                    <hr>
+                  </div>
+              </div>
+              </div>
+            <div class="row justify-content-md-center" >
                 <div class="col col-lg-8">
                     <div class="row justify-content-md-center">
                         <h5 class="mb-5 justify-content-center">O que deseja?</h5>
                     </div>
                     <div class="row">
                     <div class="col-sm">
-                          <button type="button" class="btn btn-success">Quanto preciso gastar  para acumular pontos  
+                          <button  [disabled]="!model.name" type="button" class="btn btn-success">Quanto preciso gastar  para acumular pontos  
                           </button>
                     </div>
                     <div class="col-sm">
-                        <button type="button" class="btn btn-success">Em quantos meses consigo acumular pontos
+                        <button [disabled]="!model.name" type="button" class="btn btn-success">Em quantos meses consigo acumular pontos
                           </button>
                      </div>
                      <div class="col-sm">
-                        <button type="button" class="btn btn-success">Quantos pontos consigo acumular 
+                        <button [disabled]="!model.name" type="button" class="btn btn-success">Quantos pontos consigo acumular 
                           </button>
                      </div>
                     </div>
