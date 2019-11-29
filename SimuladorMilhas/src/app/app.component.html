@@ -367,27 +367,106 @@
             <div class="row justify-content-md-center" >
                 <div class="col col-lg-8">
                     <div class="row justify-content-md-center">
-                        <h5 class="mb-5 justify-content-center">O que deseja?</h5>
+                        <h5 class="mb-1 justify-content-center">O que deseja?</h5>
                     </div>
                     <div class="row">
                     <div class="col-sm">
-                          <button  [disabled]="!model.name" type="button" class="btn btn-success">Quanto preciso gastar  para acumular pontos  
+                          <button (click)="opcoesBotao(true,false,false)"  [disabled]="!model.name" type="button" class="btn btn-success">Quanto preciso gastar  para acumular pontos  
                           </button>
                     </div>
                     <div class="col-sm">
-                        <button [disabled]="!model.name" type="button" class="btn btn-success">Em quantos meses consigo acumular pontos
+                        <button (click)="opcoesBotao(false,true,false)" [disabled]="!model.name" type="button" class="btn btn-success">Em quantos meses consigo acumular pontos
                           </button>
                      </div>
                      <div class="col-sm">
-                        <button [disabled]="!model.name" type="button" class="btn btn-success">Quantos pontos consigo acumular 
+                        <button  (click)="opcoesBotao(false,false,true)" [disabled]="!model.name" type="button" class="btn btn-success">Quantos pontos consigo acumular 
                           </button>
                      </div>
                     </div>
             </div> 
-            </div>
-
+          </div>
         </div>
       </div>
+
+      <div *ngIf="model.name">
+        <div class="row justify-content-md-center" *ngIf="menu.op1">
+            <div class="col col-lg-2">
+                <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
+            </div>
+            <div class="col col-lg-2">
+                <div class="form-group">
+                      <input (input)="myFunction(primeiraTela)" [(ngModel)]="primeiraTela.pontos" type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
+                    </div>
+            </div> 
+
+            <div class="col col-lg-2">
+                <label for="exampleInputEmail1">Em Quantos Meses</label>
+            </div>
+            <div class="col col-lg-2">
+                <div class="form-group">
+                    <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)"  [(ngModel)]="primeiraTela.meses" type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
+                </div>
+            </div> 
+            <div class="col col-lg-8" *ngIf="primeiraTela.custo > 0">
+              <hr>
+                <h5> <b>Para acumular {{primeiraTela.pontos}} pontos em {{primeiraTela.meses}} meses, 
+                  é nescessario gastar mensalalmente R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}}
+                </b></h5>
+            </div> 
+      </div>
+      <div class="row justify-content-md-center" *ngIf="menu.op2">
+          <div class="col col-lg-2">
+              <label for="exampleInputEmail1">Qual o seu gasto mensal no cartão?</label>
+          </div>
+          <div class="col col-lg-2">
+              <div class="form-group">
+                    <input  (input)="myFunction_2(segundaTela)" [(ngModel)]="segundaTela.custo" type="number" min="1" class="form-control" id="custoMensal" placeholder="Ex: 2000">
+              </div>
+          </div> 
+          <div class="col col-lg-2">
+              <label for="exampleInputEmail1">Quantos pontos quer acumular?</label>
+          </div>
+          <div class="col col-lg-2">
+              <div class="form-group">
+                    <input  (input)="myFunction_2(segundaTela)" [(ngModel)]="segundaTela.pontos"  type="number"  min="1" class="form-control" id="pontosAcumulados" aria-describedby="emailHelp" value="4.16">
+              </div>
+          </div>      
+          <div class="col col-lg-8" *ngIf="segundaTela.meses >= 0">
+            <hr>
+              <h5> <b>Para Acumular No Cartão {{segundaTela.pontos}} Pontos Com Gasto Mensal De R{{segundaTela.custo | currency:'USD':true:'1.2-2'}} São Nescessários {{segundaTela.meses.toFixed(0)}} Meses</b></h5>
+          </div> 
+    </div>
+
+
+    <div class="row justify-content-md-center" *ngIf="menu.op3">
+        <div class="col col-lg-2">
+            <label for="exampleInputEmail1">Qual o seu gasto no cartão?</label>
+        </div>
+        <div class="col col-lg-2">
+            <div class="form-group">
+                <form >
+                  <input type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
+                </form>
+            </div>
+        </div> 
+
+        <div class="col col-lg-2">
+            <label for="exampleInputEmail1">Por meses quer acumular?</label>
+        </div>
+        <div class="col col-lg-2">
+            <div class="form-group">
+                <form >
+                  <input type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
+                </form>
+            </div>
+        </div> 
+        <div class="col col-lg-8">
+          <hr>
+            <h5> <b>Com Gasto Mensal De R$ 2.00 Durante 37 Meses Você Terá Acumulado 27.750 Pontos</b></h5>
+        </div> 
+      </div>
+    </div>
+
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -426,6 +505,9 @@
         </div>
       </div>
     </div>
+
+
+    
   </div>
 
   <!-- Bootstrap core JavaScript-->
