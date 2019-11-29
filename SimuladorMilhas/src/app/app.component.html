@@ -335,10 +335,8 @@
                 </div>
                 <div class="col col-lg-2">
                     <div class="form-group">
-                        <form >
-                          <input type="number"  class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
-                        </form>
-                        <small id="precoDolar" class="form-text text-muted">Não souber clique aqui</small>
+                          <input type="number" [(ngModel)]="dolar"  class="form-control"  >
+                        <small id="precoDolar" class="form-text text-muted">Atual R{{dolar | currency:'USD':true:'1.2-2'}}</small>
                     </div>
                 </div>
            </div>
@@ -359,7 +357,7 @@
                       [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
                       [inputFormatter]="formatter" />
                       <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver dinponível clique <a href="#">aqui.</a> </small>
-
+                    
                     <hr>
                   </div>
               </div>
@@ -407,7 +405,7 @@
                     <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)"  [(ngModel)]="primeiraTela.meses" type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
                 </div>
             </div> 
-            <div class="col col-lg-8" *ngIf="primeiraTela.custo > 0">
+            <div class="col col-lg-8" *ngIf="primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
               <hr>
                 <h5> <b>Para acumular {{primeiraTela.pontos}} pontos em {{primeiraTela.meses}} meses, 
                   é nescessario gastar mensalalmente R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}}
@@ -431,7 +429,8 @@
                     <input  (input)="myFunction_2(segundaTela)" [(ngModel)]="segundaTela.pontos"  type="number"  min="1" class="form-control" id="pontosAcumulados" aria-describedby="emailHelp" value="4.16">
               </div>
           </div>      
-          <div class="col col-lg-8" *ngIf="segundaTela.meses >= 0">
+          
+          <div class="col col-lg-8" *ngIf="segundaTela.meses >= 0 && segundaTela.custo >0 && segundaTela.pontos >0 ">
             <hr>
               <h5> <b>Para Acumular No Cartão {{segundaTela.pontos}} Pontos Com Gasto Mensal De R{{segundaTela.custo | currency:'USD':true:'1.2-2'}} São Nescessários {{segundaTela.meses.toFixed(0)}} Meses</b></h5>
           </div> 
@@ -444,9 +443,7 @@
         </div>
         <div class="col col-lg-2">
             <div class="form-group">
-                <form >
-                  <input type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
-                </form>
+                  <input  (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.custo" type="number" min="1" class="form-control" id="terceiraTelaCusto" placeholder="Ex: 20000">
             </div>
         </div> 
 
@@ -455,14 +452,12 @@
         </div>
         <div class="col col-lg-2">
             <div class="form-group">
-                <form >
-                  <input type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
-                </form>
+                  <input  (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.meses" type="number"  min="1" class="form-control" id="terceiraTelaMeses" placeholder="Ex: 12">
             </div>
         </div> 
-        <div class="col col-lg-8">
+        <div class="col col-lg-8"*ngIf="terceiraTela.custo >= 0 && terceiraTela.meses >0 && terceiraTela.custo >0 ">
           <hr>
-            <h5> <b>Com Gasto Mensal De R$ 2.00 Durante 37 Meses Você Terá Acumulado 27.750 Pontos</b></h5>
+            <h5> <b>Com Gasto Mensal De R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}} Durante {{terceiraTela.meses.toFixed(0)}} Meses Você Terá Acumulado {{terceiraTela.pontos | currency:" ":"symbol"}} Pontos.</b></h5>
         </div> 
       </div>
     </div>
