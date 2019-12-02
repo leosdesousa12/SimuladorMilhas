@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   dolar = 0;
   primeiraTela = {pontos:0 , meses:0, custo:0.00};
 
-  segundaTela = {pontos:1 , meses:1, custo:0.00};
+  segundaTela = {pontos:1 , meses:1, custo: 0.00};
 
   terceiraTela = {pontos:1 , meses:1, custo:0.00};
 

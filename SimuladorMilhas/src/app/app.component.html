@@ -335,8 +335,7 @@
                 </div>
                 <div class="col col-lg-2">
                     <div class="form-group">
-                          <input type="number" [(ngModel)]="dolar"  class="form-control"  >
-                        <small id="precoDolar" class="form-text text-muted">Atual R{{dolar | currency:'USD':true:'1.2-2'}}</small>
+                          <input currencyMask [(ngModel)]="dolar" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"class="form-control"  >
                     </div>
                 </div>
            </div>
@@ -357,9 +356,7 @@
                       [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
                       [inputFormatter]="formatter" />
                       <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver dinponível clique <a href="#">aqui.</a> </small>
-                    
-                    <hr>
-                  </div>
+                    </div>
               </div>
               </div>
             <div class="row justify-content-md-center" >
@@ -405,35 +402,71 @@
                     <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)"  [(ngModel)]="primeiraTela.meses" type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
                 </div>
             </div> 
-            <div class="col col-lg-8" *ngIf="primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
-              <hr>
-                <h5> <b>Para acumular {{primeiraTela.pontos}} pontos em {{primeiraTela.meses}} meses, 
-                  é nescessario gastar mensalalmente R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}}
-                </b></h5>
-            </div> 
+            
       </div>
+      <div class="container-fluid mt-8" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
+          <div class="row justify-content-center">
+              <div class="col-auto mb-8">
+                  <div class="card" style="width: 22rem;">
+                      <div class="card border-left-success shadow h-100 py-2">
+                          <div class="card-body ">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular <b class="text-dark">{{primeiraTela.pontos}}</b>  pontos em  <b class="text-dark">{{primeiraTela.meses}}</b> meses, 
+                                      é nescessario gastar</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}} <b class="text-xs font-weight-bold text-success text-uppercase mb-1">MENSALMENTE</b> </div>
+                                  </div>
+                              <div class="col-auto">
+                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+              </div>
+          </div>
+        </div>
       <div class="row justify-content-md-center" *ngIf="menu.op2">
           <div class="col col-lg-2">
               <label for="exampleInputEmail1">Qual o seu gasto mensal no cartão?</label>
           </div>
           <div class="col col-lg-2">
               <div class="form-group">
-                    <input  (input)="myFunction_2(segundaTela)" [(ngModel)]="segundaTela.custo" type="number" min="1" class="form-control" id="custoMensal" placeholder="Ex: 2000">
-              </div>
+              <input currencyMask [(ngModel)]="segundaTela.custo" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" (input)="myFunction_2(segundaTela)"min="1" class="form-control" placeholder="Ex: R$2000"/>
+
+            </div>
           </div> 
           <div class="col col-lg-2">
               <label for="exampleInputEmail1">Quantos pontos quer acumular?</label>
           </div>
           <div class="col col-lg-2">
               <div class="form-group">
-                    <input  (input)="myFunction_2(segundaTela)" [(ngModel)]="segundaTela.pontos"  type="number"  min="1" class="form-control" id="pontosAcumulados" aria-describedby="emailHelp" value="4.16">
+                    <input  (input)="myFunction_2(segundaTela)" [(ngModel)]="segundaTela.pontos"  type="number"  min="1" class78="form-control" id="pontosAcumulados" aria-describedby="emailHelp" value="4.16">
               </div>
           </div>      
-          
-          <div class="col col-lg-8" *ngIf="segundaTela.meses >= 0 && segundaTela.custo >0 && segundaTela.pontos >0 ">
-            <hr>
-              <h5> <b>Para Acumular No Cartão {{segundaTela.pontos}} Pontos Com Gasto Mensal De R{{segundaTela.custo | currency:'USD':true:'1.2-2'}} São Nescessários {{segundaTela.meses.toFixed(0)}} Meses</b></h5>
-          </div> 
+        
+    </div>
+
+    <div class="container-fluid mt-8"  *ngIf="menu.op2 && segundaTela.meses >= 0 && segundaTela.custo >0 && segundaTela.pontos >0 ">
+      <div class="row justify-content-center">
+          <div class="col-auto mb-8">
+              <div class="card" style="width: 22rem;">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão<b class="text-dark">{{segundaTela.ponto}}</b>  Pontos Com Gasto Mensal De  <b class="text-dark">R{{segundaTela.custo | currency:'USD':true:'1.2-2'}}</b>  São Nescessários                 é nescessario gastar</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.meses.toFixed(0)}}<b class="text-xs font-weight-bold text-success text-uppercase mb-1"> meses</b> </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 
 
@@ -443,7 +476,7 @@
         </div>
         <div class="col col-lg-2">
             <div class="form-group">
-                  <input  (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.custo" type="number" min="1" class="form-control" id="terceiraTelaCusto" placeholder="Ex: 20000">
+                  <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.custo" min="1" class="form-control" id="terceiraTelaCusto" placeholder="Ex: 20000">
             </div>
         </div> 
 
@@ -455,12 +488,30 @@
                   <input  (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.meses" type="number"  min="1" class="form-control" id="terceiraTelaMeses" placeholder="Ex: 12">
             </div>
         </div> 
-        <div class="col col-lg-8"*ngIf="terceiraTela.custo >= 0 && terceiraTela.meses >0 && terceiraTela.custo >0 ">
-          <hr>
-            <h5> <b>Com Gasto Mensal De R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}} Durante {{terceiraTela.meses.toFixed(0)}} Meses Você Terá Acumulado {{terceiraTela.pontos | currency:" ":"symbol"}} Pontos.</b></h5>
-        </div> 
       </div>
     </div>
+
+    <div class="container-fluid mt-8" *ngIf="menu.op3 && terceiraTela.custo >= 0 && terceiraTela.meses >0 && terceiraTela.custo >0 ">
+      <div class="row justify-content-center">
+          <div class="col-auto mb-8">
+              <div class="card" style="width: 22rem;">    
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com Gasto Mensal De <b class="text-dark">R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}}</b> Durante <b class="text-dark">{{terceiraTela.meses.toFixed(0)}}</b> Meses Você Terá Acumulado </div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{terceiraTela.pontos | currency:" ":"symbol"}}<b class="text-xs font-weight-bold text-success text-uppercase mb-1"> pontos</b> </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-clipboard-list  fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
