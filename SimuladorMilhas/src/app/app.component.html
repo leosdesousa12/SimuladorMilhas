@@ -166,17 +166,16 @@
                   <div class="row justify-content-md-center">
                       <h5 class=" justify-content-center">Digite seu Cartão</h5>
                   </div>
-                  <div class="form-group" >
-                    <ng-template #rt let-r="result" let-t="term">
-                      <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+                  <div class="text-secondary">
+                    <ng-template class="justify-content-md-center" #rt let-r="result" let-t="term">
+                      <ngb-highlight class="justify-content-md-center" [result]="r.name" [term]="t"></ngb-highlight>
                     </ng-template>
-                    
+                  </div>
                     <input placeholder="Exemplo: Bradesco Visa Infinite" 
                       id="typeahead-template" type="text" class="form-control" 
                       [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
                       [inputFormatter]="formatter" />
                       <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver dinponível clique <a href="#">aqui.</a> </small>
-                    </div>
               </div>
               </div>
             <div class="row justify-content-md-center mb-4 " >
@@ -185,15 +184,15 @@
                         <h5 class="mb-1 justify-content-center">O que deseja?</h5>
                     </div>
                     <div class="row">
-                    <div class="col-sm">
+                    <div class="col-sm mb-3">
                           <button (click)="opcoesBotao(true,false,false)"  [disabled]="!model.name" type="button" class="btn btn-success">Quanto preciso gastar  para acumular pontos  
                           </button>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm mb-3">
                         <button (click)="opcoesBotao(false,true,false)" [disabled]="!model.name" type="button" class="btn btn-success">Em quantos meses consigo acumular pontos
                           </button>
                      </div>
-                     <div class="col-sm">
+                     <div class="col-sm mb-3">
                         <button  (click)="opcoesBotao(false,false,true)" [disabled]="!model.name" type="button" class="btn btn-success">Quantos pontos consigo acumular 
                           </button>
                      </div>
@@ -204,25 +203,26 @@
       </div>
 
       <div *ngIf="model.name">
-        <div class="row justify-content-md-center" *ngIf="menu.op1">
-            <div class="col col-lg-2">
-                <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
-            </div>
-            <div class="col col-lg-2">
-                <div class="form-group">
-                      <input (input)="myFunction(primeiraTela)" [(ngModel)]="primeiraTela.pontos" type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
-                    </div>
-            </div> 
-
-            <div class="col col-lg-2">
-                <label for="exampleInputEmail1">Em Quantos Meses</label>
-            </div>
-            <div class="col col-lg-2">
-                <div class="form-group">
-                    <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)"  [(ngModel)]="primeiraTela.meses" type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
+        <div class="container">
+            <div class="row justify-content-md-center" *ngIf="menu.op1">
+                <div class="col col-lg-2">
+                    <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
                 </div>
-            </div> 
-            
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                          <input (input)="myFunction(primeiraTela)" [(ngModel)]="primeiraTela.pontos" type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
+                        </div>
+                </div> 
+
+                <div class="col col-lg-2">
+                    <label for="exampleInputEmail1">Em Quantos Meses</label>
+                </div>
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                        <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)"  [(ngModel)]="primeiraTela.meses" type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
+                    </div>
+                </div> 
+          </div>
       </div>
       <div class="container-fluid mt-8" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
           <div class="row justify-content-center">
