@@ -1,10 +1,9 @@
 import {cartoes} from '../app/cartoes'
-import {Component, OnInit, ɵConsole} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {debounceTime,  map} from 'rxjs/operators';
-import { FormControl ,FormGroup} from '@angular/forms';
-import { Pipe } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
+import { timer } from 'rxjs';
 
 
 
@@ -70,9 +69,16 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.model = "";
     this.dolar = 0;
-    this.getDolar();
+    //this.getDolar();
+    this.oberserableTimer()
   }
+  oberserableTimer() {
+    const source = timer(1000, 600000);
+    const abc = source.subscribe(val => {
+      this.getDolar();
+    });
 
+  }
   opcoesBotao(op1:boolean,op2:boolean,op3:boolean){
       this.menu.op1 = op1;
       this.menu.op2 = op2;
