@@ -8,6 +8,9 @@
   width: 0% !important;
 
 }
+ hr{
+   pb: 2;
+  }
 
 .contentarea {
 
@@ -56,9 +59,11 @@
     width: auto;
     font-size: 10px;
   }
-  .button{
-    background: red;
+  h1{
+    font-size: 25px;
+    
   }
+ 
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */

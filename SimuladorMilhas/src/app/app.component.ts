@@ -14,7 +14,7 @@ import { timer } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   cartoes = cartoes;
-  title = 'Calculadora De Milhas';
+  title = 'SIMULADOR DE MILHAS';
   public model: any;
 
   private REST_API_SERVER = 
@@ -87,9 +87,25 @@ export class AppComponent implements OnInit {
   }
 
   atualiza_inputs() {
-    const source = timer(100, 200);
+    const source = timer(100, 900);
     const abc = source.subscribe(val => {
       //console.log("chamada ");
+
+      if(this.menu.op1){
+        this.title = "Quanto preciso gastar mensalmente para acumular  pontos durante um determinado período?";
+      }
+      
+      if(this.menu.op2){
+        this.title = "Em quantos meses consigo acumular uma quantidade de pontos com um determinado gasto mensal?";
+      }
+
+      if(this.menu.op3){
+        this.title = "Quantos pontos eu acumulo com um determinado  gasto mensal durante um certo período?";
+      }
+
+      if(!this.model){
+        this.title = 'SIMULADOR DE MILHAS';
+      }
       this.myFunction();
       this.myFunction_2();
       this.myFunction_3();
