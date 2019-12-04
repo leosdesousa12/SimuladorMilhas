@@ -12,7 +12,9 @@
   <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="./../assets/css/sb-admin-2.min.css" rel="stylesheet">
@@ -55,7 +57,8 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+          aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Components</span>
         </a>
@@ -70,7 +73,8 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Utilities</span>
         </a>
@@ -95,7 +99,8 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
           <span>Pages</span>
         </a>
@@ -149,91 +154,120 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-           <div class="row justify-content-md-center">
-                <div class="col col-lg-2">
-                    <label for="exampleInputEmail1">Valor Atual do Dolar</label>
-                </div>
-                <div class="col col-lg-2">
-                    <div class="form-group">
-                          <input currencyMask [(ngModel)]="dolar" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"class="form-control"  >
-                    </div>
-                </div>
-           </div>
+          <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+              <label for="exampleInputEmail1">Valor Atual do Dolar</label>
+            </div>
+            <div class="col col-lg-2">
+              <div class="form-group">
+                <input currencyMask [(ngModel)]="dolar" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                  class="form-control">
+              </div>
+            </div>
+          </div>
 
-           <div class="row justify-content-md-center" >
-             
+          <div class="container-fluid text-cente mb-1 mt-2" >
+
+              <!-- Content Row -->
+              <div class="row justify-content-md-center">
+    
+                  <div class="col col-lg-8">
+                      <h5 class="text-center">Informe seu Cartão?</h5>
+                      </div>
+  
+                    </div>
+            </div>
+
+          <div class="row justify-content-md-center">
+
+            <div class="col col-lg-8">
+              
+              <div class="text-secondary">
+                <ng-template class="justify-content-md-center" #rt let-r="result" let-t="term">
+                  <ngb-highlight class="justify-content-md-center" [result]="r.name" [term]="t"></ngb-highlight>
+                </ng-template>
+              </div>
+              <input placeholder="Exemplo: Bradesco Visa Infinite" id="typeahead-template" type="text"
+                class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
+                [inputFormatter]="formatter" />
+              <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver dinponível clique <a
+                  href="#">aqui.</a> </small>
+            </div>
+          </div>
+          <div class="container-fluid text-cente" >
+
+              <!-- Content Row -->
+              <div class="row justify-content-md-center">
+    
+                  <div class="col col-lg-8">
+                      <h5 class="text-center">O que deseja?</h5>
+                      </div>
+  
+                    </div>
+            </div>
+     
+          <div class="container-fluid">
+            <div class="row justify-content-md-center ">
               <div class="col col-lg-8">
-                  <div class="row justify-content-md-center">
-                      <h5 class=" justify-content-center">Informe seu Cartão</h5>
+
+                <div class="row">
+                  <div class="col-sm mb-3">
+                    <button (click)="opcoesBotao(true,false,false)" [disabled]="!model.name" type="button"
+                      class="btn btn-success">Quanto preciso gastar para acumular pontos
+                    </button>
                   </div>
-                  <div class="text-secondary">
-                    <ng-template class="justify-content-md-center" #rt let-r="result" let-t="term">
-                      <ngb-highlight class="justify-content-md-center" [result]="r.name" [term]="t"></ngb-highlight>
-                    </ng-template>
+                  <div class="col-sm mb-3">
+                    <button (click)="opcoesBotao(false,true,false)" [disabled]="!model.name" type="button"
+                      class="btn btn-success">Em quantos meses consigo acumular pontos
+                    </button>
                   </div>
-                    <input placeholder="Exemplo: Bradesco Visa Infinite" 
-                      id="typeahead-template" type="text" class="form-control" 
-                      [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
-                      [inputFormatter]="formatter" />
-                      <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver dinponível clique <a href="#">aqui.</a> </small>
+                  <div class="col-sm mb-3">
+                    <button (click)="opcoesBotao(false,false,true)" [disabled]="!model.name" type="button"
+                      class="btn btn-success">Quantos pontos consigo acumular
+                    </button>
+                  </div>
+                </div>
               </div>
-              </div>
-            <div class="row justify-content-md-center mb-4 " >
-                <div class="col col-lg-8">
-                    <div class="row justify-content-md-center">
-                        <h5 class="mb-1 justify-content-center">O que deseja?</h5>
-                    </div>
-                    <div class="row">
-                    <div class="col-sm mb-3">
-                          <button (click)="opcoesBotao(true,false,false)"  [disabled]="!model.name" type="button" class="btn btn-success">Quanto preciso gastar  para acumular pontos  
-                          </button>
-                    </div>
-                    <div class="col-sm mb-3">
-                        <button (click)="opcoesBotao(false,true,false)" [disabled]="!model.name" type="button" class="btn btn-success">Em quantos meses consigo acumular pontos
-                          </button>
-                     </div>
-                     <div class="col-sm mb-3">
-                        <button  (click)="opcoesBotao(false,false,true)" [disabled]="!model.name" type="button" class="btn btn-success">Quantos pontos consigo acumular 
-                          </button>
-                     </div>
-                    </div>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
 
       <div *ngIf="model.name">
 
-          <div class="container-fluid" *ngIf="menu.op1">
-    
-              <!-- Content Row -->
-              <div class="row justify-content-md-center">
-    
-                <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                      <div class="">
-                          <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
-                      </div>
-                      <div class="">
-                          <div class="form-group">
-                                <input (input)="myFunction(primeiraTela)" [(ngModel)]="primeiraTela.pontos" type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
-                              </div>
-                      </div> 
-                  
+        <div class="container-fluid" *ngIf="menu.op1">
+
+          <!-- Content Row -->
+          <div class="row justify-content-md-center">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="">
+                <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
+              </div>
+              <div class="">
+                <div class="form-group">
+                  <input (input)="myFunction(primeiraTela)" [(ngModel)]="primeiraTela.pontos" type="number" min="1"
+                    class="form-control" id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
                 </div>
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="">
-                        <label for="exampleInputEmail1">Em Quantos Meses?</label>
-                      </div>
-                    <div class="">
-                        <div class="form-group">
-                            <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)"  [(ngModel)]="primeiraTela.meses" type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
-                          </div>
-                    </div> 
-                
               </div>
+
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="">
+                <label for="exampleInputEmail1">Em Quantos Meses?</label>
               </div>
-        </div>    
+              <div class="">
+                <div class="form-group">
+                  <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)" [(ngModel)]="primeiraTela.meses"
+                    type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp"
+                    value="4.16">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
         <!--<div class="container">
             <div class="row justify-content-md-center" *ngIf="menu.op1">
                 <div class="col col-lg-2">
@@ -255,7 +289,7 @@
                 </div> 
           </div>
       </div>-->
-      <!--<div class="container-fluid mt-8" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
+        <!--<div class="container-fluid mt-8" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
           <div class="row justify-content-center">
               <div class="col-auto mb-8">
                   <div class="card" style="width: 60rem;">
@@ -277,57 +311,95 @@
               </div>
           </div>
         </div>-->
-        <div class="container-fluid" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
-            <div class="row  justify-content-md-center">
-              <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos}}  PONTOS</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                      </div>
+        <div class="container-fluid"
+          *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
+          <div class="row  justify-content-md-center">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos}} PONTOS</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-success shadow h-100 py-2">
-                    <div class="card-body">
-                      <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">             
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Em</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.meses}} MESES</div>
-                        </div>
-                        <div class="col-auto">
-                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
-                      </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Em</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.meses}} MESES</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-success shadow h-100 py-2">
-                      <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">É nescessario gastar</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}} MENSALMENTE</div>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                          </div>
-                        </div>
-                      </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">É nescessario gastar  mensalmente</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}} </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      <div class="row justify-content-md-center" *ngIf="menu.op2">
+
+
+        <div class="container-fluid" *ngIf="menu.op2">
+          <!-- Content Row -->
+          <div class="row justify-content-md-center">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="">
+                <label for="exampleInputEmail1">Qual o seu gasto mensal no cartão?</label>
+              </div>
+              <div class="">
+                <div class="form-group">
+                  <input (input)="myFunction_2(segundaTela)" currencyMask [(ngModel)]="segundaTela.custo"
+                    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" min="1" class="form-control"
+                    placeholder="Ex: R$2000" />
+                </div>
+              </div>
+
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="">
+                <label for="exampleInputEmail1">Quantos pontos quer acumular?</label>
+              </div>
+              <div class="">
+                <div class="form-group">
+                  <input (input)="myFunction_2(segundaTela)" [(ngModel)]="segundaTela.pontos" type="number" min="1"
+                    class="form-control" id="pontosAcumulados" aria-describedby="emailHelp">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="row justify-content-md-center" *ngIf="menu.op2">
           <div class="col col-lg-2">
               <label for="exampleInputEmail1">Qual o seu gasto mensal no cartão?</label>
           </div>
@@ -346,8 +418,8 @@
               </div>
           </div>      
         
-    </div>
-    <div class="container-fluid mt-8"  *ngIf="menu.op2 && segundaTela.meses >= 0 && segundaTela.custo >0 && segundaTela.pontos >0 ">
+    </div>-->
+        <!--<div class="container-fluid mt-8"  *ngIf="menu.op2 && segundaTela.meses >= 0 && segundaTela.custo >0 && segundaTela.pontos >0 ">
       <div class="row justify-content-center">
           <div class="col-auto mb-8">
               <div class="card" style="width: 60rem;">
@@ -356,7 +428,6 @@
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão<b class="text-dark">{{segundaTela.pontos}}</b>  pontos com gasto mensal de  <b class="text-dark">R{{segundaTela.custo | currency:'USD':true:'1.2-2'}}</b></div>
-                       
                       </div>
                       <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -392,134 +463,203 @@
           </div>   
         </div>
         <hr class=".border-bottom-success">
-    </div>
+    </div>-->
 
-    <div class="row justify-content-md-center" *ngIf="menu.op3">
-        <div class="col col-lg-2">
-            <label for="exampleInputEmail1">Qual o seu gasto no cartão?</label>
-        </div>
-        <div class="col col-lg-2">
-            <div class="form-group">
-                  <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.custo" min="1" class="form-control" id="terceiraTelaCusto" placeholder="Ex: 20000">
-            </div>
-        </div> 
-
-        <div class="col col-lg-2">
-            <label for="exampleInputEmail1">Por meses quer acumular?</label>
-        </div>
-        <div class="col col-lg-2">
-            <div class="form-group">
-                  <input  (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.meses" type="number"  min="1" class="form-control" id="terceiraTelaMeses" placeholder="Ex: 12">
-            </div>
-        </div> 
-      </div>
-    </div>
-
-    <div class="container-fluid mt-8" *ngIf="menu.op3 && terceiraTela.custo >= 0 && terceiraTela.meses >0 && terceiraTela.custo >0 ">
-      <div class="row justify-content-center">
-          <div class="col-auto mb-8">
-              <div class="card" style="width: 60rem;">    
-                <div class="card border-left-success shadow h-100 py-2">
-                    <div class="card-body">
-                      <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com gasto mensal de <b class="text-dark">R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}}</b> durante <b class="text-dark">{{terceiraTela.meses.toFixed(0)}}</b> Meses </div>
-                        </div>
-                        <div class="col-auto">
-                          <i class="fas fa-clipboard-list  fa-2x text-gray-300"></i>
-                        </div>
+        <div class="container-fluid"
+          *ngIf="menu.op2 && segundaTela.meses >= 0 && segundaTela.custo >0 && segundaTela.pontos >0">
+          <div class="row  justify-content-md-center">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão
                       </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.pontos}} PONTOS</div>
                     </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
-          </div>
-        </div>
-
-        <div class="container-fluid mt-2"  *ngIf="menu.op3 && terceiraTela.custo >= 0 && terceiraTela.meses >0 && terceiraTela.custo >0 ">
-            <hr class=".border-bottom-success">
-          <div class="row justify-content-center">
-              <div class="col-auto mb-8">
-                   <h3 class="row justify-content-center">
-                      VOCÊ TERÁ ACUMULADO
-                   </h3>
-                   <h2 class="">
-                      <div class="row justify-content-center text-success" *ngIf="terceiraTela.pontos >= 0">
-                          <b >{{terceiraTela.pontos | currency:" ":"symbol"}} Pontos</b>
-                      </div> 
-                   </h2>
-                   <h5 class="">
-                      <div class="row justify-content-center" *ngIf="model.validadePontos > 0">
-                          <b > A validade dos pontos desse cartão são de:<span class="text-danger"> {{model.validadePontos}} </span> meses</b>
-                      </div> 
-                      <div class="row justify-content-center" *ngIf="model.validadePontos == 0">
-                          <b > Este cartão não expira os pontos</b>
-                      </div> 
-                   </h5>
-              </div>   
+              </div>
             </div>
-            <hr class=".border-bottom-success">
-        </div>
-    
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Aderson 2019</span>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com gasto mensal de </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        R{{segundaTela.custo | currency:'USD':true:'1.2-2'}} Dolares</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCÊ ACUMULA EM</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.meses.toFixed(0)}} MESES</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
+        </div>  
+        <div class="container-fluid" *ngIf="menu.op3">
+            <div class="row justify-content-md-center">
+  
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="">
+                  <label for="exampleInputEmail1">Qual o seu gasto no cartão?</label>
+                </div>
+                <div class="">
+                  <div class="form-group">
+                    <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                      (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.custo" min="1" class="form-control"
+                      id="terceiraTelaCusto" placeholder="Ex: 20000">
+                  </div>
+                </div>
+  
+              </div>
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="">
+                  <label for="exampleInputEmail1">Por meses quer acumular?</label>
+                </div>
+                <div class="">
+                  <div class="form-group">
+                    <input (input)="myFunction_3(terceiraTela)" [(ngModel)]="terceiraTela.meses" type="number" min="1"
+                      class="form-control" id="terceiraTelaMeses" placeholder="Ex: 12">
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid"
+          *ngIf="menu.op3 && terceiraTela.custo >= 0 && terceiraTela.meses >0 && terceiraTela.custo >0 ">
+          <div class="row  justify-content-md-center">
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com gasto mensal de </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Durante</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{terceiraTela.meses.toFixed(0)}} MESES</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCê TERA ACUMULADO</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        {{terceiraTela.pontos | currency:" ":"symbol"}} Pontos</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <!-- Footer -->
+          <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Aderson 2019</span>
+              </div>
+            </div>
+          </footer>
+          <!-- End of Footer -->
+
         </div>
+        <!-- End of Content Wrapper -->
+
       </div>
-    </div>
+      <!-- End of Page Wrapper -->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <!-- Logout Modal-->
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
 
 
-    
-  </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="./../assets/vendor/jquery/jquery.min.js"></script>
+      </div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="./../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="./../assets/vendor/jquery/jquery.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="./../assets/js/sb-admin-2.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="./../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="./../assets/vendor/chart.js/Chart.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="./../assets/js/sb-admin-2.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="./../assets/js/demo/chart-area-demo.js"></script>
-  <script src="./../assets/js/demo/chart-pie-demo.js"></script>
+      <!-- Page level plugins -->
+      <script src="./../assets/vendor/chart.js/Chart.min.js"></script>
+
+      <!-- Page level custom scripts -->
+      <script src="./../assets/js/demo/chart-area-demo.js"></script>
+      <script src="./../assets/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
