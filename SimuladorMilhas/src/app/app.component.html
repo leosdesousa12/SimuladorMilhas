@@ -41,7 +41,7 @@
         <div class="container-fluid">
           <div class="row justify-content-md-center">
             <div class="col col-lg-2">
-              <label for="exampleInputEmail1">Valor Atual do Dolar</label>
+              <label for="exampleInputEmail1">Valor atual do dólar</label>
             </div>
             <div class="col col-lg-2">
               <div class="form-group">
@@ -57,7 +57,7 @@
             <div class="row justify-content-md-center">
 
               <div class="col col-lg-8">
-                <h5 class="text-center">Informe seu Cartão?</h5>
+                <h5 class="text-center">Informe seu cartão de crédito</h5>
               </div>
 
             </div>
@@ -222,7 +222,7 @@
                       <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular</div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos}} PONTOS</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos}} pontos</div>
                         </div>
                         <div class="col-auto">
                           <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -237,7 +237,7 @@
                       <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Em</div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.meses}} MESES</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.meses}} meses</div>
                         </div>
                         <div class="col-auto">
                           <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -254,7 +254,7 @@
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">É nescessario gastar
                             mensalmente</div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}} </div>
+                            R{{primeiraTela.custo | currency:'BRL':true}} </div>
                         </div>
                         <div class="col-auto">
                           <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -378,7 +378,7 @@
                         <div class="col mr-2">
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão
                           </div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.pontos}} PONTOS</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.pontos}} pontos</div>
                         </div>
                         <div class="col-auto">
                           <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -395,7 +395,7 @@
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com gasto mensal de
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            R{{segundaTela.custo | currency:'USD':true:'1.2-2'}} Dolares</div>
+                            {{segundaTela.custo | currency:'BRL':true}}</div>
                         </div>
                         <div class="col-auto">
                           <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -410,7 +410,7 @@
                       <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCÊ ACUMULA EM</div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.meses.toFixed(0)}} MESES
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.meses.toFixed(0)}} meses
                           </div>
                         </div>
                         <div class="col-auto">
@@ -428,7 +428,7 @@
 
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="">
-                  <label for="exampleInputEmail1">Qual o seu gasto no cartão?</label>
+                  <label for="exampleInputEmail1">Qual o seu gasto mensal no cartão?</label>
                 </div>
                 <div class="">
                   <div class="form-group">
@@ -441,7 +441,7 @@
               </div>
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="">
-                  <label for="exampleInputEmail1">Por meses quer acumular?</label>
+                  <label for="exampleInputEmail1">Por quantos meses quer acumular?</label>
                 </div>
                 <div class="">
                   <div class="form-group">
@@ -464,7 +464,7 @@
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com gasto mensal de
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                          R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}}</div>
+                          R{{terceiraTela.custo | currency:'BRL':true}}</div>
                       </div>
                       <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -479,7 +479,7 @@
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Durante</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{terceiraTela.meses.toFixed(0)}} MESES
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{terceiraTela.meses.toFixed(0)}} meses
                         </div>
                       </div>
                       <div class="col-auto">
@@ -494,9 +494,9 @@
                   <div class="card-body">
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCê TERA ACUMULADO</div>
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCÊ TERA ACUMULADO</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                          {{terceiraTela.pontos | currency:" ":"symbol"}} Pontos</div>
+                          {{terceiraTela.pontos | currency:'BRL':true}}} pontos</div>
                       </div>
                       <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
