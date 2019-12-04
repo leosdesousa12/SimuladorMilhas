@@ -164,7 +164,7 @@
              
               <div class="col col-lg-8">
                   <div class="row justify-content-md-center">
-                      <h5 class=" justify-content-center">Digite seu Cartão</h5>
+                      <h5 class=" justify-content-center">Informe seu Cartão</h5>
                   </div>
                   <div class="text-secondary">
                     <ng-template class="justify-content-md-center" #rt let-r="result" let-t="term">
@@ -203,7 +203,38 @@
       </div>
 
       <div *ngIf="model.name">
-        <div class="container">
+
+          <div class="container-fluid" *ngIf="menu.op1">
+    
+              <!-- Content Row -->
+              <div class="row justify-content-md-center">
+    
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="">
+                          <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
+                      </div>
+                      <div class="">
+                          <div class="form-group">
+                                <input (input)="myFunction(primeiraTela)" [(ngModel)]="primeiraTela.pontos" type="number" min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
+                              </div>
+                      </div> 
+                  
+                </div>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="">
+                        <label for="exampleInputEmail1">Em Quantos Meses?</label>
+                      </div>
+                    <div class="">
+                        <div class="form-group">
+                            <input placeholder="Ex: 12" (input)="myFunction(primeiraTela)"  [(ngModel)]="primeiraTela.meses" type="number"  min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
+                          </div>
+                    </div> 
+                
+              </div>
+              </div>
+        </div>    
+        <!--<div class="container">
             <div class="row justify-content-md-center" *ngIf="menu.op1">
                 <div class="col col-lg-2">
                     <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
@@ -215,7 +246,7 @@
                 </div> 
 
                 <div class="col col-lg-2">
-                    <label for="exampleInputEmail1">Em Quantos Meses</label>
+                    <label for="exampleInputEmail1">Em Quantos Meses?</label>
                 </div>
                 <div class="col col-lg-2">
                     <div class="form-group">
@@ -223,11 +254,11 @@
                     </div>
                 </div> 
           </div>
-      </div>
-      <div class="container-fluid mt-8" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
+      </div>-->
+      <!--<div class="container-fluid mt-8" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
           <div class="row justify-content-center">
               <div class="col-auto mb-8">
-                  <div class="card" style="width: 22rem;">
+                  <div class="card" style="width: 60rem;">
                       <div class="card border-left-success shadow h-100 py-2">
                           <div class="card-body ">
                             <div class="row no-gutters align-items-center">
@@ -244,6 +275,56 @@
                         </div>
                   </div>
               </div>
+          </div>
+        </div>-->
+        <div class="container-fluid" *ngIf="menu.op1 && primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
+            <div class="row  justify-content-md-center">
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos}}  PONTOS</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">             
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Em</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.meses}} MESES</div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">É nescessario gastar</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">R{{primeiraTela.custo | currency:'USD':true:'1.2-2'}} MENSALMENTE</div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
           </div>
         </div>
       <div class="row justify-content-md-center" *ngIf="menu.op2">
@@ -269,12 +350,12 @@
     <div class="container-fluid mt-8"  *ngIf="menu.op2 && segundaTela.meses >= 0 && segundaTela.custo >0 && segundaTela.pontos >0 ">
       <div class="row justify-content-center">
           <div class="col-auto mb-8">
-              <div class="card" style="width: 22rem;">
+              <div class="card" style="width: 60rem;">
                 <div class="card border-left-success shadow h-100 py-2">
                   <div class="card-body">
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão<b class="text-dark">{{segundaTela.pontos}}</b>  Pontos Com Gasto Mensal De  <b class="text-dark">R{{segundaTela.custo | currency:'USD':true:'1.2-2'}}</b>  São Nescessários</div>
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão<b class="text-dark">{{segundaTela.pontos}}</b>  pontos com gasto mensal de  <b class="text-dark">R{{segundaTela.custo | currency:'USD':true:'1.2-2'}}</b></div>
                        
                       </div>
                       <div class="col-auto">
@@ -304,8 +385,6 @@
                   <div class="row justify-content-center" *ngIf="model.validadePontos > 0">
                       <b > A validade dos pontos desse cartão são de:<span class="text-danger"> {{model.validadePontos}} </span> meses</b>
                   </div> 
-
-
                   <div class="row justify-content-center" *ngIf="model.validadePontos == 0">
                       <b > Este cartão não expira os pontos</b>
                   </div> 
@@ -314,9 +393,6 @@
         </div>
         <hr class=".border-bottom-success">
     </div>
-
-    
-
 
     <div class="row justify-content-md-center" *ngIf="menu.op3">
         <div class="col col-lg-2">
@@ -342,12 +418,12 @@
     <div class="container-fluid mt-8" *ngIf="menu.op3 && terceiraTela.custo >= 0 && terceiraTela.meses >0 && terceiraTela.custo >0 ">
       <div class="row justify-content-center">
           <div class="col-auto mb-8">
-              <div class="card" style="width: 22rem;">    
+              <div class="card" style="width: 60rem;">    
                 <div class="card border-left-success shadow h-100 py-2">
                     <div class="card-body">
                       <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com Gasto Mensal De <b class="text-dark">R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}}</b> Durante <b class="text-dark">{{terceiraTela.meses.toFixed(0)}}</b> Meses </div>
+                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com gasto mensal de <b class="text-dark">R{{terceiraTela.custo | currency:'USD':true:'1.2-2'}}</b> durante <b class="text-dark">{{terceiraTela.meses.toFixed(0)}}</b> Meses </div>
                         </div>
                         <div class="col-auto">
                           <i class="fas fa-clipboard-list  fa-2x text-gray-300"></i>
@@ -365,7 +441,7 @@
           <div class="row justify-content-center">
               <div class="col-auto mb-8">
                    <h3 class="row justify-content-center">
-                      Você Terá Acumulado
+                      VOCÊ TERÁ ACUMULADO
                    </h3>
                    <h2 class="">
                       <div class="row justify-content-center text-success" *ngIf="terceiraTela.pontos >= 0">
@@ -376,8 +452,6 @@
                       <div class="row justify-content-center" *ngIf="model.validadePontos > 0">
                           <b > A validade dos pontos desse cartão são de:<span class="text-danger"> {{model.validadePontos}} </span> meses</b>
                       </div> 
-    
-    
                       <div class="row justify-content-center" *ngIf="model.validadePontos == 0">
                           <b > Este cartão não expira os pontos</b>
                       </div> 
