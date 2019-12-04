@@ -87,7 +87,7 @@ export class AppComponent implements OnInit {
   }
 
   atualiza_inputs() {
-    const source = timer(100, 900);
+    const source = timer(100, 300);
     const abc = source.subscribe(val => {
       //console.log("chamada ");
 
