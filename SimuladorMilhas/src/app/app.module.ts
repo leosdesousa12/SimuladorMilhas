@@ -13,12 +13,21 @@ registerLocaleData(localePT, 'pt', localeExtraPT);
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'simulador', component: AppComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     NgbModule,
     BrowserModule,
     AppRoutingModule,
