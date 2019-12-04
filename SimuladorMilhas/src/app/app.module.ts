@@ -7,19 +7,11 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormularioComponent } from './formulario/formulario.component';
-import { PontosPeriodoComponent } from './pontos-periodo/pontos-periodo.component';
-import { PontosPorGastoComponent } from './pontos-por-gasto/pontos-por-gasto.component';
-import { PontosAcumuladosPeriodoComponent } from './pontos-acumulados-periodo/pontos-acumulados-periodo.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FormularioComponent,
-    PontosPeriodoComponent,
-    PontosPorGastoComponent,
-    PontosAcumuladosPeriodoComponent
+    AppComponent
   ],
   imports: [
     NgbModule,
