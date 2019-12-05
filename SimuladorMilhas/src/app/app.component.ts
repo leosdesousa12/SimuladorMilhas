@@ -34,17 +34,13 @@ export class AppComponent implements OnInit {
   terceiraTela = {pontos:1 , meses:1, custo:0.00};
 
   myFunction(){
-   // console.log(this.primeiraTela);
-
     if(this.primeiraTela.pontos == 0 || this.primeiraTela.meses == 0){
       this.primeiraTela.custo = 0.0;
-  }else{
-      this.primeiraTela.custo = (((this.primeiraTela.pontos/this.primeiraTela.meses)/this.model.valPonto) * this.dolar);
-  }
+      }else{
+          this.primeiraTela.custo = (((this.primeiraTela.pontos/this.primeiraTela.meses)/this.model.valPonto) * this.dolar);
+      }
   }
   myFunction_2(){
-    //console.log(this.segundaTela);
-
     if(this.segundaTela.pontos == 0 || this.segundaTela.custo == 0){
       this.segundaTela.meses =  0;
 
@@ -121,7 +117,6 @@ export class AppComponent implements OnInit {
 
   getDolar() {
     this.sendGetRequest().subscribe((data: any[])=>{
-      //console.log(data[0].ask);
       this.dolar = data[0].ask;
 
     })  

@@ -11,15 +11,15 @@
 
   <title>SB Admin 2 - Dashboard</title>
 
-  <!-- Custom fonts for this template-->
+  <!-- Custom fonts for this template
   <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
-
-   <!-- <link id="theme-css"  type="text/css" href="./../assets/css/sb-admin-2.min.css">-->
+-->
+   <link rel="preload" type="text/css" href="./../assets/css/sb1.css">
 </head>
 
-<body id="page-top" style="height: 100%;">
+<body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -48,17 +48,12 @@
 
         <hr class="border-bottom-success">
         <!-- Begin Page Content -->
-        <div class="container-fluid pt-4">
+        <div class="container-fluid pt-6">
           <div class="row justify-content-md-center mt-2">
-            <div class="col col-lg-2">
-              <label for="exampleInputEmail1">Valor atual do dólar</label>
+            <div class="col col-lg-6">
+              <h5 class="text-center text-success font-weight-bold">Valor atual do dólar {{dolar | currency:'BRL':true}}</h5>
             </div>
-            <div class="col col-lg-2">
-              <div class="form-group">
-                <input currencyMask [(ngModel)]="dolar" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
-                  class="form-control">
-              </div>
-            </div>
+            
           </div>
 
           <div class="container-fluid text-cente mb-1 mt-2">
@@ -80,10 +75,10 @@
               <div class="text-secondary">
 
               </div>
-              <input placeholder="Exemplo: Bradesco Visa Infinite" id="typeahead-template" type="text"
+              <input placeholderright="Exemplo: Bradesco Visa Infinite" id="typeahead-template" type="text"
                 class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
-                [inputFormatter]="formatter" />
-              <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver dinponível clique <a
+                [inputFormatter]="formatter"  />
+              <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver diponível clique <a
                   href="#">aqui.</a> </small>
             </div>
           </div>
@@ -93,7 +88,7 @@
             <div class="row justify-content-md-center">
 
               <div class="col col-lg-8">
-                <h5 class="text-center">O que deseja?</h5>
+                <h5 class="text-center pt-4">O que deseja?</h5>
               </div>
 
             </div>
@@ -122,23 +117,22 @@
 
           <div class="container-fluid">
             <div class="row justify-content-md-center ">
-              <div class="col col-lg-8">
-
+              <div class=" form-group col col-lg-8">
+                  
                 <div class="row">
                   <div class="col-sm mb-3">
                     <button (click)="opcoesBotao(true,false,false)" [disabled]="!model.name" type="button"
-                      class="btn btn-success">Quanto preciso gastar para acumular pontos
+                      class="btn btn-success btn-lg ">Quanto preciso gastar para acumular pontos
                     </button>
                   </div>
                   <div class="col-sm mb-3">
                     <button (click)="opcoesBotao(false,true,false)" [disabled]="!model.name" type="button"
-                      class="btn btn-success">Em quantos meses consigo acumular pontos
+                      class="btn btn-success btn-lg">Em quantos meses consigo acumular pontos
                     </button>
                   </div>
-                  <div class="col-sm mb-3">
+                  <div class="col-sm mb-">
                     <button (click)="opcoesBotao(false,false,true)" [disabled]="!model.name" type="button"
-                      class="btn btn-success">Quantos pontos consigo acumular
-                    </button>
+                      class="btn btn-success btn-lg b3">  Quantos pontos consigo acumular  </button>
                   </div>
                 </div>
               </div>
@@ -157,24 +151,24 @@
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="">
-                <label for="exampleInputEmail1">Quantos Pontos Quer Acumular?</label>
+                <label for="exampleInputEmail1">quantos pontos quer acumular?</label>
               </div>
               <div class="">
                 <div class="form-group">
-                  <input (input)="myFunction()" [(ngModel)]="primeiraTela.pontos" type="number" min="1"
-                    class="form-control" id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
+                  <input (input)="myFunction()" currencyMask [(ngModel)]="primeiraTela.pontos" [options]="{ prefix: '', thousands: '.', decimal: ',' }"  min="1"
+                    class="form-control"  id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
                 </div>
               </div>
 
             </div>
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="">
-                <label for="exampleInputEmail1">Em Quantos Meses?</label>
+                <label for="exampleInputEmail1">em quantos meses?</label>
               </div>
               <div class="">
                 <div class="form-group">
                   <input placeholder="Ex: 12" (input)="myFunction()" [(ngModel)]="primeiraTela.meses" type="number"
-                    min="1" class="form-control" id="precoDolar" aria-describedby="emailHelp" value="4.16">
+                    min="1" class="form-control"style="text-align:right !important;"  id="precoDolar" aria-describedby="emailHelp" value="4.16">
                 </div>
               </div>
 
@@ -191,7 +185,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos}} pontos</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos | currency:" ":"symbol"}} pontos</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -223,7 +217,7 @@
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">É nescessario gastar
                         mensalmente</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        R{{primeiraTela.custo | currency:'BRL':true}} </div>
+                        {{primeiraTela.custo | currency:'BRL':true}} </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -243,7 +237,7 @@
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="">
-                <label for="exampleInputEmail1">Qual o seu gasto mensal no cartão?</label>
+                <label for="exampleInputEmail1">qual o seu gasto mensal no cartão?</label>
               </div>
               <div class="">
                 <div class="form-group">
@@ -256,11 +250,11 @@
             </div>
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="">
-                <label for="exampleInputEmail1">Quantos pontos quer acumular?</label>
+                <label for="exampleInputEmail1">quantos pontos quer acumular?</label>
               </div>
               <div class="">
                 <div class="form-group">
-                  <input (input)="myFunction_2()" [(ngModel)]="segundaTela.pontos" type="number" min="1"
+                  <input (input)="myFunction_2()" currencyMask [(ngModel)]="segundaTela.pontos" [options]="{ prefix: '', thousands: '.', decimal: ',' }" min="1"
                     class="form-control" id="pontosAcumulados" aria-describedby="emailHelp">
 
                 </div>
@@ -281,7 +275,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão
                       </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.pontos}} pontos</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.pontos | currency:" ":"symbol"}} pontos</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -312,7 +306,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCÊ ACUMULA EM</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCÊ IRÁ ACUMULAR EM</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.meses.toFixed(0)}} meses
                       </div>
                     </div>
@@ -331,7 +325,7 @@
 
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="">
-              <label for="exampleInputEmail1">Qual o seu gasto mensal no cartão?</label>
+              <label for="exampleInputEmail1">qual o seu gasto mensal no cartão?</label>
             </div>
             <div class="">
               <div class="form-group">
@@ -344,12 +338,12 @@
           </div>
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="">
-              <label for="exampleInputEmail1">Por quantos meses quer acumular?</label>
+              <label for="exampleInputEmail1">por quantos meses quer acumular?</label>
             </div>
             <div class="">
               <div class="form-group">
                 <input (input)="myFunction_3()" [(ngModel)]="terceiraTela.meses" type="number" min="1"
-                  class="form-control" id="terceiraTelaMeses" placeholder="Ex: 12">
+                  class="form-control" style="text-align:right !important;" id="terceiraTelaMeses" placeholder="Ex: 12">
               </div>
             </div>
 
@@ -367,7 +361,7 @@
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Com gasto mensal de
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                      R{{terceiraTela.custo | currency:'BRL':true}}</div>
+                      {{terceiraTela.custo | currency:'BRL':true}}</div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -399,7 +393,7 @@
                   <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">VOCÊ TERA ACUMULADO</div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                      {{terceiraTela.pontos | currency:'BRL':true}} pontos</div>
+                      {{terceiraTela.pontos | currency:" ":"symbol"}} pontos</div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -472,21 +466,7 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="./../assets/vendor/jquery/jquery.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="./../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="./../assets/js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="./../assets/vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="./../assets/js/demo/chart-area-demo.js"></script>
-  <script src="./../assets/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
