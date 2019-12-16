@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 -->
-   <link rel="preload" type="text/css" href="./../assets/css/sb1.css">
+  <link rel="preload" type="text/css" href="./../assets/css/sb1.css">
 </head>
 
 <body id="page-top">
@@ -51,9 +51,10 @@
         <div class="container-fluid pt-6">
           <div class="row justify-content-md-center mt-2">
             <div class="col col-lg-6">
-              <h5 class="text-center text-success font-weight-bold">Valor atual do dólar {{dolar | currency:'BRL':true}}</h5>
+              <h5 class="text-center text-success font-weight-bold">Valor atual do dólar {{dolar | currency:'BRL':true}}
+              </h5>
             </div>
-            
+
           </div>
 
           <div class="container-fluid text-cente mb-1 mt-2">
@@ -62,7 +63,7 @@
             <div class="row justify-content-md-center">
 
               <div class="col col-lg-8">
-                <h5 class="text-center">Informe seu cartão de crédito</h5>
+                <h5 class="text-center">Informe o nome do seu cartão de crédito</h5>
               </div>
 
             </div>
@@ -77,8 +78,8 @@
               </div>
               <input placeholderright="Exemplo: Bradesco Visa Infinite" id="typeahead-template" type="text"
                 class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
-                [inputFormatter]="formatter"  />
-              <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver diponível clique <a
+                [inputFormatter]="formatter" placeholder="EX: Itaucard Visa Infinite" />
+              <small id="precoDolar" class="form-text text-muted">Se seu cartão não estiver disponivél clique <a
                   href="#">aqui.</a> </small>
             </div>
           </div>
@@ -118,7 +119,7 @@
           <div class="container-fluid">
             <div class="row justify-content-md-center ">
               <div class=" form-group col col-lg-8">
-                  
+
                 <div class="row">
                   <div class="col-sm mb-3">
                     <button (click)="opcoesBotao(true,false,false)" [disabled]="!model.name" type="button"
@@ -132,7 +133,7 @@
                   </div>
                   <div class="col-sm mb-">
                     <button (click)="opcoesBotao(false,false,true)" [disabled]="!model.name" type="button"
-                      class="btn btn-success btn-lg b3">  Quantos pontos consigo acumular  </button>
+                      class="btn btn-success btn-lg b3"> Quantos pontos consigo acumular </button>
                   </div>
                 </div>
               </div>
@@ -142,6 +143,10 @@
       </div>
 
       <div *ngIf="model.name">
+
+        <app-gasto-por-ponto
+            [cartao]="model">
+        </app-gasto-por-ponto>
 
         <div class="container-fluid" *ngIf="menu.op1">
 
@@ -155,8 +160,9 @@
               </div>
               <div class="">
                 <div class="form-group">
-                  <input (input)="myFunction()" currencyMask [(ngModel)]="primeiraTela.pontos" [options]="{ prefix: '', thousands: '.', decimal: ',' }"  min="1"
-                    class="form-control"  id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
+                  <input (input)="myFunction()" currencyMask [(ngModel)]="primeiraTela.pontos"
+                    [options]="{ prefix: '', thousands: '.', decimal: ',' }" min="1" class="form-control"
+                    id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
                 </div>
               </div>
 
@@ -168,7 +174,8 @@
               <div class="">
                 <div class="form-group">
                   <input placeholder="Ex: 12" (input)="myFunction()" [(ngModel)]="primeiraTela.meses" type="number"
-                    min="1" class="form-control"style="text-align:right !important;"  id="precoDolar" aria-describedby="emailHelp" value="4.16">
+                    min="1" class="form-control" style="text-align:right !important;" id="precoDolar"
+                    aria-describedby="emailHelp" value="4.16">
                 </div>
               </div>
 
@@ -185,7 +192,8 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.pontos | currency:" ":"symbol"}} pontos</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        {{primeiraTela.pontos | currency:" ":"symbol"}} pontos</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -254,8 +262,9 @@
               </div>
               <div class="">
                 <div class="form-group">
-                  <input (input)="myFunction_2()" currencyMask [(ngModel)]="segundaTela.pontos" [options]="{ prefix: '', thousands: '.', decimal: ',' }" min="1"
-                    class="form-control" id="pontosAcumulados" aria-describedby="emailHelp">
+                  <input (input)="myFunction_2()" currencyMask [(ngModel)]="segundaTela.pontos"
+                    [options]="{ prefix: '', thousands: '.', decimal: ',' }" min="1" class="form-control"
+                    id="pontosAcumulados" aria-describedby="emailHelp">
 
                 </div>
               </div>
@@ -275,7 +284,8 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular no cartão
                       </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.pontos | currency:" ":"symbol"}} pontos</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{segundaTela.pontos | currency:" ":"symbol"}}
+                        pontos</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -426,7 +436,7 @@
       <footer class="sticky-footer bg-white ">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Aderson 2019</span>
+            <span>Copyright &copy; Simulador de Milhas 2019</span>
           </div>
         </div>
       </footer>
