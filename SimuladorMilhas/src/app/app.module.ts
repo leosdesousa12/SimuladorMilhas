@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { GastoPorPontoComponent } from './gasto-por-ponto/gasto-por-ponto.component';
+import { MesesPorPontoComponent } from './meses-por-ponto/meses-por-ponto.component';
 
 const appRoutes: Routes = [
   { path: 'simulador', component: AppComponent }
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    GastoPorPontoComponent
+    GastoPorPontoComponent,
+    MesesPorPontoComponent
   ],
   imports: [
     RouterModule.forRoot(

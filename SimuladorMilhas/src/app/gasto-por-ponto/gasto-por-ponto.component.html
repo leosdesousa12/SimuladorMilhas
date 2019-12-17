@@ -1,1 +1,82 @@
-<p>gasto por ponto {{cartao.name}}</p>
+<div class="row justify-content-md-center">
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="">
+            <label for="exampleInputEmail1">quantos pontos quer acumular?</label>
+        </div>
+        <div class="">
+            <div class="form-group">
+                <input (input)="myFunction()" currencyMask [(ngModel)]="primeiraTela.pontos"
+                    [options]="{ prefix: '', thousands: '.', decimal: ',' }" min="1" class="form-control"
+                    id="precoDolar" aria-describedby="emailHelp" placeholder="Ex: 20000">
+            </div>
+        </div>
+
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="">
+            <label for="exampleInputEmail1">em quantos meses?</label>
+        </div>
+        <div class="">
+            <div class="form-group">
+                <input placeholder="Ex: 12" (input)="myFunction()" [(ngModel)]="primeiraTela.meses" type="number"
+                    min="1" class="form-control" style="text-align:right !important;" id="precoDolar"
+                    aria-describedby="emailHelp" value="4.16">
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container-fluid"
+    *ngIf=" primeiraTela.custo > 0 && primeiraTela.pontos >0 && primeiraTela.meses >0 ">
+    <div class="row  justify-content-md-center">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Para acumular</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{primeiraTela.pontos | currency:" ":"symbol"}} pontos</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Em</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{primeiraTela.meses}} meses</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">É nescessario gastar
+                                mensalmente</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{primeiraTela.custo | currency:'BRL':true}} </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

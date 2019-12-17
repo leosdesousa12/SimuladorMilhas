@@ -27,27 +27,11 @@ export class AppComponent implements OnInit {
   menu= {op1: false,op2:false,op3:false};
   cont = 0;
   dolar = 0;
-  primeiraTela = {pontos:0 , meses:0, custo:0.00};
 
-  segundaTela = {pontos:1 , meses:1, custo: 0.00};
 
   terceiraTela = {pontos:1 , meses:1, custo:0.00};
 
-  myFunction(){
-    if(this.primeiraTela.pontos == 0 || this.primeiraTela.meses == 0){
-      this.primeiraTela.custo = 0.0;
-      }else{
-          this.primeiraTela.custo = (((this.primeiraTela.pontos/this.primeiraTela.meses)/this.model.valPonto) * this.dolar);
-      }
-  }
-  myFunction_2(){
-    if(this.segundaTela.pontos == 0 || this.segundaTela.custo == 0){
-      this.segundaTela.meses =  0;
-
-    }else{
-      this.segundaTela.meses =  (this.segundaTela.pontos/((this.segundaTela.custo/ this.dolar) * this.model.valPonto));
-  }
-  }
+ 
 
   myFunction_3(){
     //console.log(this.terceiraTela);
@@ -86,13 +70,13 @@ export class AppComponent implements OnInit {
     const source = timer(100, 300);
     const abc = source.subscribe(val => {
       //console.log("chamada ");
-
       if(this.menu.op1){
-        this.title = "Quanto preciso gastar mensalmente para acumular  pontos durante um determinado período?";
-      }
-      
-      if(this.menu.op2){
         this.title = "Em quantos meses consigo acumular uma quantidade de pontos com um determinado gasto mensal?";
+      }
+
+
+      if(this.menu.op2){
+        this.title = "Quanto preciso gastar mensalmente para acumular  pontos durante um determinado período?";
       }
 
       if(this.menu.op3){
@@ -102,8 +86,6 @@ export class AppComponent implements OnInit {
       if(!this.model){
         this.title = 'SIMULADOR DE MILHAS';
       }
-      this.myFunction();
-      this.myFunction_2();
       this.myFunction_3();
 
     });
